@@ -160,7 +160,6 @@ Carte::setCouleurAtout($couleurAtout);
         
         <!-- Zone de jeu principale -->
         <div class='main-area'>
-            <div id='resultat-tour-container'></div>
             
             <div class='container' id='game-container'>
         
@@ -200,6 +199,8 @@ Carte::setCouleurAtout($couleurAtout);
             }
             echo "<button type='submit' class='btn-play' id='btn-play'>JOUER</button>";
             echo "</form>";
+            
+            echo "<div id='resultat-tour-container'></div>";
         }
         ?>
             </div>
