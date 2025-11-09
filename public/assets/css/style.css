@@ -845,18 +845,18 @@ button:active,
 /* Résultat du tour */
 #resultat-tour-container {
     position: absolute;
-    top: 50%;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 1000;
     pointer-events: none;
 }
 
 .resultat-tour {
     margin: 0;
-    padding: 35px;
-    max-width: 850px;
-    background: rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.5);
     border: 3px solid rgba(0, 0, 0, 0.2);
     border-radius: 18px;
     box-shadow: 
@@ -864,6 +864,18 @@ button:active,
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .resultat-tour:hover {
@@ -875,9 +887,9 @@ button:active,
 
 .resultat-tour h2 {
     text-align: center;
-    font-size: 16px;
+    font-size: 13px;
     color: #ffd700;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 0.6),
         0 0 15px rgba(255, 215, 0, 0.3);
