@@ -111,6 +111,46 @@ Carte::setCouleurAtout($couleurAtout);
                 </div>
             </div>
             
+            <!-- Historique des manches -->
+            <div class='historique-box'>
+                <div class='historique-title'>Historique</div>
+                <div class='historique-list' id='historique-list'>
+                    <?php
+                    if (isset($_SESSION['historique']) && !empty($_SESSION['historique'])) {
+                        $historique = array_reverse($_SESSION['historique']); // Plus récent en premier
+                        foreach ($historique as $manche) {
+                            $gagnant = $manche['gagnant'];
+                            $classGagnant = '';
+                            if ($gagnant == 1) {
+                                $classGagnant = 'gagnant';
+                            } elseif ($gagnant == 2) {
+                                $classGagnant = 'perdant';
+                            } else {
+                                $classGagnant = 'egalite';
+                            }
+                            echo "<div class='historique-item $classGagnant'>";
+                            echo "<div class='historique-tour'>Tour " . $manche['tour'] . "</div>";
+                            echo "<div class='historique-cartes'>";
+                            echo "<img src='" . $manche['carteJoueur1']['image'] . "' alt='" . $manche['carteJoueur1']['nom'] . "' class='historique-carte'>";
+                            echo "<span class='historique-vs'>VS</span>";
+                            echo "<img src='" . $manche['carteJoueur2']['image'] . "' alt='" . $manche['carteJoueur2']['nom'] . "' class='historique-carte'>";
+                            echo "</div>";
+                            if ($gagnant == 1) {
+                                echo "<div class='historique-resultat'>✓ +" . $manche['points'] . " pts</div>";
+                            } elseif ($gagnant == 2) {
+                                echo "<div class='historique-resultat'>✗ +" . $manche['points'] . " pts</div>";
+                            } else {
+                                echo "<div class='historique-resultat'>= 0 pts</div>";
+                            }
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<div class='historique-vide'>Aucune manche jouée</div>";
+                    }
+                    ?>
+                </div>
+            </div>
+            
             <!-- Boutons -->
             <div class='sidebar-buttons'>
                 <a href='index.php'><button class='pixel-btn pixel-btn-red'>Accueil</button></a>
@@ -120,6 +160,7 @@ Carte::setCouleurAtout($couleurAtout);
         
         <!-- Zone de jeu principale -->
         <div class='main-area'>
+            <div id='resultat-tour-container'></div>
             
             <div class='container' id='game-container'>
         
@@ -144,7 +185,6 @@ Carte::setCouleurAtout($couleurAtout);
             session_destroy();
         } else {
             
-            echo "<div id='resultat-tour-container'></div>";
             echo "<form id='card-select-form' class='card-select-form'>";
             foreach ($_SESSION['jeu_joueur1'] as $index => $carteTab) {
                 $carte = new Carte($carteTab['couleur'], $carteTab['figure']);
@@ -211,6 +251,9 @@ Carte::setCouleurAtout($couleurAtout);
                     
                     // Mettre à jour les scores et stats
                     mettreAJourScores(data);
+                    
+                    // Mettre à jour l'historique
+                    mettreAJourHistorique(data.historique);
                     
                     // Vérifier si la partie est terminée
                     if (data.partieTerminee) {
@@ -295,6 +338,47 @@ Carte::setCouleurAtout($couleurAtout);
             if (tourActuel) tourActuel.textContent = data.stats.tourActuel;
             if (anteValue) anteValue.textContent = data.stats.cartesRestantes + '/' + (data.stats.cartesRestantes + data.stats.cartesRestantesJ2);
             if (roundValue) roundValue.textContent = data.stats.tourActuel;
+        }
+        
+        function mettreAJourHistorique(historique) {
+            const historiqueList = document.getElementById('historique-list');
+            if (!historiqueList || !historique) return;
+            
+            // Vider l'historique actuel
+            historiqueList.innerHTML = '';
+            
+            // Inverser l'historique pour afficher le plus récent en premier
+            const historiqueReversed = [...historique].reverse();
+            
+            // Ajouter chaque manche
+            historiqueReversed.forEach(manche => {
+                let classGagnant = 'egalite';
+                if (manche.gagnant == 1) {
+                    classGagnant = 'gagnant';
+                } else if (manche.gagnant == 2) {
+                    classGagnant = 'perdant';
+                }
+                
+                let resultatText = '= 0 pts';
+                if (manche.gagnant == 1) {
+                    resultatText = '✓ +' + manche.points + ' pts';
+                } else if (manche.gagnant == 2) {
+                    resultatText = '✗ +' + manche.points + ' pts';
+                }
+                
+                const item = document.createElement('div');
+                item.className = `historique-item ${classGagnant}`;
+                item.innerHTML = `
+                    <div class='historique-tour'>Tour ${manche.tour}</div>
+                    <div class='historique-cartes'>
+                        <img src='${manche.carteJoueur1.image}' alt='${manche.carteJoueur1.nom}' class='historique-carte'>
+                        <span class='historique-vs'>VS</span>
+                        <img src='${manche.carteJoueur2.image}' alt='${manche.carteJoueur2.nom}' class='historique-carte'>
+                    </div>
+                    <div class='historique-resultat'>${resultatText}</div>
+                `;
+                historiqueList.appendChild(item);
+            });
         }
         
         function mettreAJourCartes(cartes) {

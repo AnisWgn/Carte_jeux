@@ -354,7 +354,141 @@ body {
     font-weight: bold;
 }
 
-/* Boutons pixelisés */
+/* Historique des manches */
+.historique-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 15px 0;
+    max-height: 300px;
+    overflow-y: auto;
+    /* Style personnalisé de la scrollbar pour Webkit (Chrome, Safari, Edge) */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 149, 0, 0.3) rgba(0, 0, 0, 0.1);
+}
+
+/* Style de la scrollbar pour Webkit */
+.historique-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.historique-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.historique-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 149, 0, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.historique-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 149, 0, 0.6);
+}
+
+.historique-title {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.historique-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.historique-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    transition: all 0.2s ease;
+}
+
+.historique-item.gagnant {
+    border-color: rgba(74, 222, 128, 0.5);
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.historique-item.perdant {
+    border-color: rgba(255, 71, 87, 0.5);
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.historique-item.egalite {
+    border-color: rgba(255, 149, 0, 0.5);
+    background: rgba(255, 149, 0, 0.1);
+}
+
+.historique-tour {
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 6px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.historique-cartes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.historique-carte {
+    width: 35px;
+    height: auto;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    image-rendering: auto;
+}
+
+.historique-vs {
+    font-size: 6px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+}
+
+.historique-resultat {
+    font-size: 7px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.historique-item.gagnant .historique-resultat {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.2);
+}
+
+.historique-item.perdant .historique-resultat {
+    color: #ff4757;
+    background: rgba(255, 71, 87, 0.2);
+}
+
+.historique-item.egalite .historique-resultat {
+    color: #ff9500;
+    background: rgba(255, 149, 0, 0.2);
+}
+
+.historique-vide {
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
 .sidebar-buttons {
     display: flex;
     flex-direction: column;
@@ -709,8 +843,17 @@ button:active,
 }
 
 /* Résultat du tour */
+#resultat-tour-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none;
+}
+
 .resultat-tour {
-    margin: 35px auto;
+    margin: 0;
     padding: 35px;
     max-width: 850px;
     background: rgba(0, 0, 0, 0.4);
@@ -830,6 +973,7 @@ button:active,
     text-align: center;
     padding: 20px 30px;
     margin-top: 30px;
+    margin-bottom: 0;
     border: 3px solid rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     font-size: 11px;
