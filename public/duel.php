@@ -50,7 +50,7 @@ Carte::setCouleurAtout($couleurAtout);
 <html>
 <head>
     <meta charset='UTF-8'>
-    <title>BATAILLE INTERACTIVE</title>
+    <title>Ludos</title>
     <link rel='stylesheet' href='assets/css/style.css'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 </head>
@@ -60,7 +60,7 @@ Carte::setCouleurAtout($couleurAtout);
         <div class='sidebar'>
             <!-- En-tête Big Blind -->
             <div class='big-blind-header'>
-                <div class='big-blind-title'>Bataille</div>
+                <div class='big-blind-title'>Ludos</div>
                 <div class='big-blind-badge'>
                     <div class='badge-icon'>⚔️</div>
                 </div>
