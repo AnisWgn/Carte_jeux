@@ -60,7 +60,7 @@ Carte::setCouleurAtout($couleurAtout);
         <div class='sidebar'>
             <!-- En-tête Big Blind -->
             <div class='big-blind-header'>
-                <div class='big-blind-title'>Ludos</div>
+                <div class='big-blind-title'> Ludos </div>
                 <div class='big-blind-badge'>
                     <div class='badge-icon'>⚔️</div>
                 </div>
