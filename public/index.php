@@ -11,7 +11,7 @@
         <!-- En-tête -->
         <header class='header'>
             <div class='title-container'>
-                <h1 class='main-title'>🎴 BATAILLE</h1>
+                <h1 class='main-title'>🎴 Ludos</h1>
                 <p class='subtitle'>Jeu de cartes classique</p>
             </div>
         </header>
