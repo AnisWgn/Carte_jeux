@@ -94,22 +94,22 @@ Carte::setCouleurAtout($couleurAtout);
             </div>
             
             <!-- Total en or -->
-            <div class='gold-total'>
+            <!-- <div class='gold-total'>
                 <div class='gold-symbol'>$</div>
-                <div class='gold-amount' id='total-points'><?php echo $_SESSION['score_joueur1'] + $_SESSION['score_joueur2']; ?></div>
-            </div>
+                <div class='gold-amount' id='total-points'><?php echo $_SESSION['score_joueur2']?></div>
+            </div> -->
             
             <!-- Ante et Round -->
-            <div class='ante-round-box'>
+            <!-- <div class='ante-round-box'>
                 <div class='ante-item'>
-                    <div class='ante-label'>Ante</div>
+                    <div class='ante-label'>Carte</div>
                     <div class='ante-value' id='ante-value'><?php echo count($_SESSION['jeu_joueur1']); ?>/<?php echo count($_SESSION['jeu_joueur1']) + count($_SESSION['jeu_joueur2']); ?></div>
                 </div>
                 <div class='ante-item'>
                     <div class='ante-label'>Round</div>
                     <div class='ante-value' id='round-value'><?php echo $_SESSION['tour_actuel']; ?></div>
                 </div>
-            </div>
+            </div> -->
             
             <!-- Historique des manches -->
             <div class='historique-box'>
