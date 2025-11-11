@@ -176,7 +176,7 @@
 
         <!-- Footer -->
         <footer class='footer'>
-            <p class='footer-text'>© 2024 Bataille - Jeu de cartes</p>
+            <p class='footer-text'>© 2025 Ludos - Jeu de cartes</p>
         </footer>
     </div>
 </body>
