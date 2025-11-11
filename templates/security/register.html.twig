@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Ludos{% endblock %}
+
+{% block body %}
+<div class='auth-container'>
+    <div class='auth-card'>
+        <div class='auth-header'>
+            <h1 class='auth-title'>🎴 Inscription</h1>
+            <p class='auth-subtitle'>Créez votre compte Ludos</p>
+        </div>
+
+        {{ form_start(registrationForm, {'attr': {'class': 'auth-form'}}) }}
+            <div class='form-group'>
+                {{ form_label(registrationForm.username, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(registrationForm.username) }}
+                {{ form_errors(registrationForm.username) }}
+            </div>
+
+            <div class='form-group'>
+                {{ form_label(registrationForm.email, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(registrationForm.email) }}
+                {{ form_errors(registrationForm.email) }}
+            </div>
+
+            <div class='form-group'>
+                {{ form_label(registrationForm.plainPassword.first, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(registrationForm.plainPassword.first) }}
+                {{ form_errors(registrationForm.plainPassword.first) }}
+            </div>
+
+            <div class='form-group'>
+                {{ form_label(registrationForm.plainPassword.second, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(registrationForm.plainPassword.second) }}
+                {{ form_errors(registrationForm.plainPassword.second) }}
+            </div>
+
+            <div class='form-group form-checkbox-group'>
+                {{ form_widget(registrationForm.agreeTerms) }}
+                {{ form_label(registrationForm.agreeTerms, null, {'label_attr': {'class': 'form-checkbox-label'}}) }}
+                {{ form_errors(registrationForm.agreeTerms) }}
+            </div>
+
+            <button type="submit" class='btn-submit'>
+                <span class='btn-text'>S'INSCRIRE</span>
+                <span class='btn-icon'>✓</span>
+            </button>
+        {{ form_end(registrationForm) }}
+
+        <div class='auth-footer'>
+            <p class='auth-link'>
+                Déjà un compte ? 
+                <a href="{{ path('app_login') }}" class='link'>Se connecter</a>
+            </p>
+            <p class='auth-link'>
+                <a href="{{ asset('index.php') }}" class='link'>← Retour à l'accueil</a>
+            </p>
+        </div>
+    </div>
+
+    <div class='auth-decoration'>
+        <div class='decoration-card'>🃏</div>
+        <div class='decoration-card'>🎴</div>
+        <div class='decoration-card'>🎯</div>
+    </div>
+</div>
+{% endblock %}
+

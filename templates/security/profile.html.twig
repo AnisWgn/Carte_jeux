@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil - Ludos{% endblock %}
+
+{% block body %}
+<div class='profile-container'>
+    <div class='profile-header'>
+        <h1 class='profile-title'>👤 Mon Profil</h1>
+        <p class='profile-subtitle'>Bienvenue {{ user.username }} !</p>
+    </div>
+
+    <div class='profile-content'>
+        <div class='profile-card'>
+            <div class='profile-section'>
+                <h2 class='section-title'>📊 Informations du compte</h2>
+                <div class='info-grid'>
+                    <div class='info-item'>
+                        <span class='info-label'>Nom d'utilisateur :</span>
+                        <span class='info-value'>{{ user.username }}</span>
+                    </div>
+                    <div class='info-item'>
+                        <span class='info-label'>Email :</span>
+                        <span class='info-value'>{{ user.email }}</span>
+                    </div>
+                    <div class='info-item'>
+                        <span class='info-label'>Membre depuis :</span>
+                        <span class='info-value'>{{ user.createdAt|date('d/m/Y') }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class='profile-section'>
+                <h2 class='section-title'>💰 Monnaie</h2>
+                <div class='wallet-display'>
+                    <div class='wallet-icon'>💰</div>
+                    <div class='wallet-amount'>{{ user.coins }} pièces</div>
+                </div>
+            </div>
+
+            <div class='profile-section'>
+                <h2 class='section-title'>🎮 Statistiques</h2>
+                <div class='stats-grid'>
+                    <div class='stat-card'>
+                        <div class='stat-icon'>🎯</div>
+                        <div class='stat-value'>{{ user.totalGames }}</div>
+                        <div class='stat-label'>Parties jouées</div>
+                    </div>
+                    <div class='stat-card'>
+                        <div class='stat-icon'>🏆</div>
+                        <div class='stat-value'>{{ user.totalWins }}</div>
+                        <div class='stat-label'>Victoires</div>
+                    </div>
+                    <div class='stat-card'>
+                        <div class='stat-icon'>⭐</div>
+                        <div class='stat-value'>{{ user.totalScore }}</div>
+                        <div class='stat-label'>Score total</div>
+                    </div>
+                    <div class='stat-card'>
+                        <div class='stat-icon'>📈</div>
+                        <div class='stat-value'>{{ user.winRate }}%</div>
+                        <div class='stat-label'>Taux de victoire</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='profile-actions'>
+                <a href="{{ asset('duel.php') }}" class='btn-action btn-primary'>
+                    <span class='btn-text'>JOUER</span>
+                    <span class='btn-icon'>⚔️</span>
+                </a>
+                <a href="{{ asset('boutique.php') }}" class='btn-action btn-secondary'>
+                    <span class='btn-text'>BOUTIQUE</span>
+                    <span class='btn-icon'>🛒</span>
+                </a>
+                <a href="{{ asset('classement.php') }}" class='btn-action btn-tertiary'>
+                    <span class='btn-text'>CLASSEMENT</span>
+                    <span class='btn-icon'>🏆</span>
+                </a>
+                <a href="{{ path('app_logout') }}" class='btn-action btn-danger'>
+                    <span class='btn-text'>DÉCONNEXION</span>
+                    <span class='btn-icon'>🚪</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

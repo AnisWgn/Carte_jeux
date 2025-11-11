@@ -5,6 +5,7 @@
     <title>Ludos - Accueil</title>
     <link rel='stylesheet' href='assets/css/style-accueil.css'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='assets/js/konami.js' defer></script>
 </head>
 <body>
     <div class='accueil-container'>

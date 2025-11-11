@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Ludos{% endblock %}
+
+{% block body %}
+<div class='accueil-container'>
+    <header class='header'>
+        <div class='title-container'>
+            <h1 class='main-title'>🎴 Ludos</h1>
+            <p class='subtitle'>Jeu de cartes classique</p>
+        </div>
+        {% if app.user %}
+            <div class='user-info'>
+                <span class='user-name'>👤 {{ app.user.username }}</span>
+                <span class='user-coins'>💰 {{ app.user.coins }} pièces</span>
+            </div>
+        {% endif %}
+    </header>
+
+    <main class='main-content'>
+        <section class='intro-section'>
+            <div class='intro-card'>
+                <h2>Bienvenue {% if app.user %}{{ app.user.username }}{% endif %} !</h2>
+                <p class='intro-text'>
+                    Affrontez l'ordinateur dans une partie de bataille épique !<br>
+                    Choisissez vos cartes avec stratégie et remportez la victoire.
+                </p>
+            </div>
+        </section>
+
+        <section class='action-section'>
+            <div class='action-card'>
+                <h3>🚀 Prêt à jouer ?</h3>
+                <p class='action-text'>Lancez une nouvelle partie et testez vos compétences !</p>
+                <div style='display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;'>
+                    <a href="{{ asset('duel.php') }}" class='btn-start'>
+                        <span class='btn-text'>NOUVELLE PARTIE</span>
+                        <span class='btn-icon'>▶</span>
+                    </a>
+                    <a href="{{ asset('classement.php') }}" class='btn-start' style='background: linear-gradient(135deg, #ffd700 0%, #ffc700 100%); color: #333;'>
+                        <span class='btn-text'>CLASSEMENT</span>
+                        <span class='btn-icon'>🏆</span>
+                    </a>
+                    <a href="{{ asset('boutique.php') }}" class='btn-start' style='background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);'>
+                        <span class='btn-text'>BOUTIQUE</span>
+                        <span class='btn-icon'>🛒</span>
+                    </a>
+                    {% if app.user %}
+                        <a href="{{ path('app_profile') }}" class='btn-start' style='background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);'>
+                            <span class='btn-text'>PROFIL</span>
+                            <span class='btn-icon'>👤</span>
+                        </a>
+                        <a href="{{ path('app_logout') }}" class='btn-start' style='background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);'>
+                            <span class='btn-text'>DÉCONNEXION</span>
+                            <span class='btn-icon'>🚪</span>
+                        </a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}" class='btn-start' style='background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);'>
+                            <span class='btn-text'>CONNEXION</span>
+                            <span class='btn-icon'>🔑</span>
+                        </a>
+                        <a href="{{ path('app_register') }}" class='btn-start' style='background: linear-gradient(135deg, #10b981 0%, #059669 100%);'>
+                            <span class='btn-text'>INSCRIPTION</span>
+                            <span class='btn-icon'>✨</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class='footer'>
+        <p class='footer-text'>© 2025 Ludos - Jeu de cartes</p>
+    </footer>
+</div>
+{% endblock %}
+

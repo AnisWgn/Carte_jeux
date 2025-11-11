@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - Ludos{% endblock %}
+
+{% block body %}
+<div class='auth-container'>
+    <div class='auth-card'>
+        <div class='auth-header'>
+            <h1 class='auth-title'>🎴 Connexion</h1>
+            <p class='auth-subtitle'>Connectez-vous à votre compte</p>
+        </div>
+
+        {% if error %}
+            <div class='alert alert-error'>
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        {% for message in app.flashes('success') %}
+            <div class='alert alert-success'>
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <form method="post" class='auth-form'>
+            <div class='form-group'>
+                <label for="username" class='form-label'>Nom d'utilisateur</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="_username" 
+                    value="{{ last_username }}" 
+                    class='form-input'
+                    placeholder="Votre nom d'utilisateur"
+                    required 
+                    autofocus
+                >
+            </div>
+
+            <div class='form-group'>
+                <label for="password" class='form-label'>Mot de passe</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="_password" 
+                    class='form-input'
+                    placeholder="••••••••"
+                    required
+                >
+            </div>
+
+            <div class='form-group form-checkbox-group'>
+                <input 
+                    type="checkbox" 
+                    id="_remember_me" 
+                    name="_remember_me" 
+                    class='form-checkbox'
+                >
+                <label for="_remember_me" class='form-checkbox-label'>
+                    Se souvenir de moi
+                </label>
+            </div>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button type="submit" class='btn-submit'>
+                <span class='btn-text'>SE CONNECTER</span>
+                <span class='btn-icon'>→</span>
+            </button>
+        </form>
+
+        <div class='auth-footer'>
+            <p class='auth-link'>
+                Pas encore de compte ? 
+                <a href="{{ path('app_register') }}" class='link'>S'inscrire</a>
+            </p>
+            <p class='auth-link'>
+                <a href="{{ asset('index.php') }}" class='link'>← Retour à l'accueil</a>
+            </p>
+        </div>
+    </div>
+
+    <div class='auth-decoration'>
+        <div class='decoration-card'>🃏</div>
+        <div class='decoration-card'>🎴</div>
+        <div class='decoration-card'>🎯</div>
+    </div>
+</div>
+{% endblock %}
+

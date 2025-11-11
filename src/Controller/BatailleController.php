@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Controller;
+
 require_once __DIR__ . '/modele/class.carte.inc.php';
 
 class BatailleController {
