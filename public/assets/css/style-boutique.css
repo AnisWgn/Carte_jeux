@@ -1,0 +1,401 @@
+/* Style spécifique pour la page boutique */
+
+/* Section Portefeuille */
+.wallet-section {
+    margin-bottom: 40px;
+}
+
+.wallet-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+    border: 3px solid #ffc700;
+    border-radius: 20px;
+    padding: 25px 40px;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.wallet-icon {
+    font-size: 48px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.wallet-info {
+    text-align: left;
+}
+
+.wallet-label {
+    font-size: 14px;
+    color: #654321;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.wallet-amount {
+    font-size: 32px;
+    font-weight: bold;
+    color: #654321;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Sections de la boutique */
+.shop-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Grille de produits */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Carte produit */
+.product-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Variantes de cartes */
+.product-card-featured {
+    border-color: #a855f7;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(147, 51, 234, 0.1) 100%);
+}
+
+.product-card-legendary {
+    border-color: #f59e0b;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.1) 100%);
+    animation: glow-legendary 2s ease-in-out infinite;
+}
+
+.product-card-special {
+    border-color: #ef4444;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(220, 38, 38, 0.1) 100%);
+    animation: pulse-special 1.5s ease-in-out infinite;
+}
+
+@keyframes glow-legendary {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(245, 158, 11, 0.6);
+    }
+}
+
+@keyframes pulse-special {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Badge produit */
+.product-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.product-badge-common {
+    background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+    color: #fff;
+}
+
+.product-badge-rare {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    color: #fff;
+}
+
+.product-badge-epic {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+    color: #fff;
+}
+
+.product-badge-legendary {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+}
+
+.product-badge-special {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #fff;
+}
+
+/* Icône produit */
+.product-icon {
+    font-size: 64px;
+    text-align: center;
+    margin: 20px 0;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* Nom produit */
+.product-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Description produit */
+.product-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+/* Footer produit */
+.product-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: auto;
+}
+
+/* Prix produit */
+.product-price {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.price-old {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
+}
+
+.price-amount {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.price-currency {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Bouton acheter */
+.btn-buy {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-buy:active {
+    transform: translateY(0);
+}
+
+.btn-buy-common {
+    background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+    color: #fff;
+}
+
+.btn-buy-common:hover {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+}
+
+.btn-buy-rare {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    color: #fff;
+}
+
+.btn-buy-rare:hover {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.btn-buy-epic {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+    color: #fff;
+}
+
+.btn-buy-epic:hover {
+    background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+}
+
+.btn-buy-legendary {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+}
+
+.btn-buy-legendary:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.btn-buy-special {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #fff;
+}
+
+.btn-buy-special:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Section d'action */
+.action-section {
+    margin-bottom: 40px;
+}
+
+.action-card {
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%);
+    border: 2px solid rgba(74, 222, 128, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.action-text {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+}
+
+.btn-text {
+    letter-spacing: 1px;
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .wallet-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .wallet-info {
+        text-align: center;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 22px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-action {
+        width: 100%;
+        justify-content: center;
+    }
+}
+

@@ -57,6 +57,10 @@
                             <span class='btn-text'>CLASSEMENT</span>
                             <span class='btn-icon'>🏆</span>
                         </a>
+                        <a href='boutique.php' class='btn-start' style='background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);'>
+                            <span class='btn-text'>BOUTIQUE</span>
+                            <span class='btn-icon'>🛒</span>
+                        </a>
                     </div>
                 </div>
             </section>
