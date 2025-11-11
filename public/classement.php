@@ -13,7 +13,7 @@
         <header class='header'>
             <div class='title-container'>
                 <h1 class='main-title'>🏆 CLASSEMENT</h1>
-                <p class='subtitle'>Les meilleurs joueurs de bataille</p>
+                <p class='subtitle'>Les meilleurs joueurs de Ludos</p>
             </div>
         </header>
 
