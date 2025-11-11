@@ -60,7 +60,7 @@
             <!-- Section Classement -->
             <section class='ranking-section'>
                 <div class='ranking-card'>
-                    <h2>📊 Classement Général</h2>
+                    <h2>📊 Classement General</h2>
                     <div class='ranking-list'>
                         <!-- Place 4 -->
                         <div class='ranking-item'>
