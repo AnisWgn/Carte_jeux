@@ -154,6 +154,7 @@ Carte::setCouleurAtout($couleurAtout);
             <!-- Boutons -->
             <div class='sidebar-buttons'>
                 <a href='index.php'><button class='pixel-btn pixel-btn-red'>Accueil</button></a>
+                <a href='classement.php'><button class='pixel-btn pixel-btn-gold'>Classement</button></a>
                 <a href='?nouvelle_partie=1'><button class='pixel-btn pixel-btn-orange'>Nouvelle Partie</button></a>
             </div>
         </div>

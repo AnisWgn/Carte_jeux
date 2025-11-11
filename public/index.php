@@ -48,10 +48,16 @@
                 <div class='action-card'>
                     <h3>🚀 Prêt à jouer ?</h3>
                     <p class='action-text'>Lancez une nouvelle partie et testez vos compétences !</p>
-                    <a href='duel.php' class='btn-start'>
-                        <span class='btn-text'>NOUVELLE PARTIE</span>
-                        <span class='btn-icon'>▶</span>
-                    </a>
+                    <div style='display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;'>
+                        <a href='duel.php' class='btn-start'>
+                            <span class='btn-text'>NOUVELLE PARTIE</span>
+                            <span class='btn-icon'>▶</span>
+                        </a>
+                        <a href='classement.php' class='btn-start' style='background: linear-gradient(135deg, #ffd700 0%, #ffc700 100%); color: #333;'>
+                            <span class='btn-text'>CLASSEMENT</span>
+                            <span class='btn-icon'>🏆</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
