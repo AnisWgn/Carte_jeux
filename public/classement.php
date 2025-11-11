@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='UTF-8'>
-    <title>BATAILLE - Classement</title>
+    <title>Ludos - Classement</title>
     <link rel='stylesheet' href='assets/css/style-accueil.css'>
     <link rel='stylesheet' href='assets/css/style-classement.css'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
