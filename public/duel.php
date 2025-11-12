@@ -6,7 +6,11 @@ ini_set('display_errors', 1);
 session_start();
 
 require_once '../src/Controller/BatailleController.php';
+require_once '../src/Controller/modele/class.carte.inc.php';
 require_once '../src/fonctions.inc.php';
+
+use App\Controller\BatailleController;
+use App\Controller\Carte;
 
 // Initialisation de la partie si nécessaire
 if (!isset($_SESSION['partie_initialisee']) || isset($_GET['nouvelle_partie'])) {

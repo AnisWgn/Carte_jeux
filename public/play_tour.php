@@ -21,7 +21,11 @@ if (!isset($_POST['carte_choisie'])) {
 }
 
 require_once '../src/Controller/BatailleController.php';
+require_once '../src/Controller/modele/class.carte.inc.php';
 require_once '../src/fonctions.inc.php';
+
+use App\Controller\BatailleController;
+use App\Controller\Carte;
 
 try {
     // Récupérer les données de la session

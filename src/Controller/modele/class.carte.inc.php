@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Controller;
+
 class Carte {
     private $couleur;
     private $figure;
